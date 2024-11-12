@@ -7,8 +7,8 @@ def memory_exercise(difficulty="fácil"):
     sequence = random.sample(items, length)
     
     print("Memoriza esta secuencia:", sequence)
-    time.sleep(3)  # Ajusta el tiempo si quieres un mayor desafío
-    print("\n" * 100)  # Borra la pantalla para ocultar la secuencia
+    time.sleep(3)  
+    print("\n" * 100)  
     
     answer = input("¿Cuál era la secuencia? Separa cada palabra con una coma: ")
     if answer.split(", ") == sequence:
