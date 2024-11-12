@@ -15,10 +15,20 @@ questions = {
     }
 }
 
-def general_knowledge(difficulty="fácil"):
+def general_knowledge(difficulty="fácil", tracker=None):
     question, answer = random.choice(list(questions[difficulty].items()))
     user_answer = input(question + " ")
     if user_answer.lower() == answer.lower():
-        return "¡Correcto! Sabes mucho."
+        result = "¡Correcto! Sabes mucho."
+        score = 5
     else:
-        return f"Incorrecto. La respuesta correcta era: {answer}"
+        result = f"Incorrecto. La respuesta correcta era: {answer}"
+        score = 2
+    
+    print(result)
+    
+    # Actualiza el progreso si el tracker está presente
+    if tracker is not None:
+        tracker.update_progress("general_knowledge", score)
+    
+    return result

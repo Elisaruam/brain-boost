@@ -1,6 +1,6 @@
 import random
 
-def mental_math(difficulty="fácil"):
+def mental_math(difficulty="fácil", tracker=None):
     ranges = {"fácil": (1, 10), "intermedio": (10, 50), "difícil": (50, 100)}
     num1 = random.randint(*ranges[difficulty])
     num2 = random.randint(*ranges[difficulty])
@@ -10,6 +10,16 @@ def mental_math(difficulty="fácil"):
     
     user_answer = int(input(f"¿Cuál es el resultado de {question}? "))
     if user_answer == correct_answer:
-        return "¡Correcto! Buen cálculo mental."
+        result = "¡Correcto! Buen cálculo mental."
+        score = 5  # Puntuación alta para respuesta correcta
     else:
-        return f"Incorrecto. La respuesta correcta era: {correct_answer}"
+        result = f"Incorrecto. La respuesta correcta era: {correct_answer}"
+        score = 2  # Puntuación baja para respuesta incorrecta
+    
+    print(result)
+    
+    # Actualiza el progreso si el tracker está presente
+    if tracker is not None:
+        tracker.update_progress("mental_math", score)
+    
+    return result
