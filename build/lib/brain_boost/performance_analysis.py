@@ -11,28 +11,20 @@ def analyze_overall_performance():
     average_scores = {}
     for exercise in exercises:
         scores = tracker.get_progress(exercise)
-        # Verifica las puntuaciones y calcula el promedio
-        print(f"Puntuaciones para {exercise}: {scores}")
         if scores:
-            average = sum(scores) / len(scores)
-            average_scores[exercise] = average
-            print(f"Promedio para {exercise}: {average}")
+            average_scores[exercise] = sum(scores) / len(scores)
         else:
-            average_scores[exercise] = 0  # Si no hay datos, el promedio es 0
+            average_scores[exercise] = 0
     
-    # Crear el gráfico de puntuación promedio para cada ejercicio
     exercises = list(average_scores.keys())
     averages = list(average_scores.values())
     
-    plt.figure(figsize=(8, 5))
     plt.bar(exercises, averages, color='skyblue')
     plt.title("Puntuación promedio en todos los ejercicios")
     plt.xlabel("Ejercicio")
     plt.ylabel("Puntuación Promedio")
     plt.ylim(0, 5)
     plt.show()
-
-
 
 
 # import matplotlib.pyplot as plt

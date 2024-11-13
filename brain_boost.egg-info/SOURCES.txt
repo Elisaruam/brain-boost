@@ -10,3 +10,9 @@ brain_boost.egg-info/PKG-INFO
 brain_boost.egg-info/SOURCES.txt
 brain_boost.egg-info/dependency_links.txt
 brain_boost.egg-info/top_level.txt
+tests/test_general_knowledge.py
+tests/test_logic_exercise.py
+tests/test_memory_exercise.py
+tests/test_mental_math.py
+tests/test_performance_analysis.py
+tests/test_progress_tracker.py
