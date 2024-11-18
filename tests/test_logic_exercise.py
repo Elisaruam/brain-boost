@@ -13,3 +13,5 @@ class TestLogicExercise(unittest.TestCase):
     def test_invalid_difficulty(self):
         with self.assertRaises(ValueError):
             logic_exercise(difficulty="invalid", tracker=self.tracker)
+
+            
